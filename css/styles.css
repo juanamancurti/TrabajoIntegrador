@@ -1,0 +1,25 @@
+*{box-sizing:border-box;}
+
+body{
+    background-color: rgb(242, 156, 170);
+}
+
+.main{
+    max-width: 1180px;
+    margin: 0 auto;
+  
+}
+
+.logo{
+    width: 180px;
+    margin-bottom: 30px;
+}
+
+.Register{
+    font-family: 
+}
+
+header{
+    background-color: rgba(166, 8, 76, 0.671);
+
+}
