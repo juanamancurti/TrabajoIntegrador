@@ -4,6 +4,7 @@ header{
     background-image: URL("../img/Background-Barbie-Wallpaper.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 body{
@@ -21,14 +22,14 @@ body{
 }
 
 .login-font, .register-font{
-    color:white;
+    color: rgb(146, 9, 171);
     font-family:'Cormorant Garamond', serif;
     font-size: large;
     text-decoration: none;
 }
 
 .login, .register{
-    background: rgb(247, 105, 185);
+    background: rgb(225, 176, 204);
     border: 0;
 }
 
@@ -60,4 +61,45 @@ h1{
 
 .pagina-principal{
     flex-direction: row;
+}
+
+.barra{
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+.busqueda{
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: rgba(241, 187, 196, 0.887);
+    border: 0;
+    color: rgb(146, 9, 171);
+}
+
+
+.buscar{
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    color: rgb(146, 9, 171);
+    background-color: rgba(241, 187, 196, 0.887);
+    border:0;
+}
+
+.home{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+
+
+.home-font{
+    color: rgba(241, 187, 196, 0.887);
+    text-decoration: none;
+    background-color: rgb(146, 9, 171);
+    font-size: 30px;
+    padding: 10px;
 }
