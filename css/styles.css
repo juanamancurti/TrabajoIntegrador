@@ -1,28 +1,63 @@
-*{
-    box-sizing:border-box;
+*{box-sizing:border-box;}
+
+header{
+    background-image: URL("../img/Background-Barbie-Wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 body{
-    background-color: rgb(242, 156, 170);
+    background-color: rgb(234, 144, 201) ;
 }
 
 .main{
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 0 auto;
   
 }
 
-h1 {
-    margin:0;
+.usuario{
+    text-align: end;
+}
+
+.login-font, .register-font{
+    color:white;
+    font-family:'Cormorant Garamond', serif;
+    font-size: large;
+    text-decoration: none;
+}
+
+.login, .register{
+    background: rgb(247, 105, 185);
+    border: 0;
 }
 
 .logo{
-    display: flex;
-    border-radius: 50%;
-    width: 300px;
-    flex-wrap: wrap;
+    margin: 0 auto;
+    align-self: center;
+    text-align: center;
+    margin-top: 50px;
 }
 
-header{
-    background-color: rgba(166, 8, 76, 0.671);
+.titulo{
+    font-family: 'Barbie', sans-serif;
+    color: rgb(218, 52, 149);
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 
+        -2px -2px 0 rgba(255, 255, 255, 0.779),
+        2px -2px 0 white,
+        -2px 2px 0 white,
+        2px 2px 0 white;
+
+}
+
+h1{
+    margin: 0;
+    margin-top: 20px;
+
+}
+
+.pagina-principal{
+    flex-direction: row;
 }
