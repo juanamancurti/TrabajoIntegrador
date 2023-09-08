@@ -2,7 +2,7 @@
 
 header{
     background-image: URL("../img/Background-Barbie-Wallpaper.jpg");
-    background-size: cover;
+    background-size: cover all;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -37,7 +37,6 @@ body{
     margin: 0 auto;
     align-self: center;
     text-align: center;
-    margin-top: 50px;
 }
 
 .titulo{
@@ -55,7 +54,6 @@ body{
 
 h1{
     margin: 0;
-    margin-top: 20px;
 
 }
 
@@ -64,7 +62,6 @@ h1{
 }
 
 .barra{
-    margin-top: 10px;
     text-align: center;
 
 }
@@ -91,7 +88,8 @@ h1{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 30px;
+    margin-right: 10px;
 }
 
 
@@ -102,4 +100,10 @@ h1{
     background-color: rgb(146, 9, 171);
     font-size: 30px;
     padding: 10px;
+    box-sizing: border-box;
+    width: 180px;
+    height: 50px;
+    padding: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
