@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Pink Studio/Resultados de busqueda</title>
+
 </head>
 <body>
+    <header>
+                <div class="logo">
+            <img src="./img/Circlelogo.png">
+        </div>
+        <div class="titulo">
+            <h1>Pink Studio</h1>
+        </div>
+
+        <nav>
+            <form class="barra" action="./resultadosbusqueda.html" method="get">
+                <input class="busqueda" type="text" id="busqueda" name="busqueda" placeholder="Escribe aquí tu búsqueda"
+                    required>
+                <input class="buscar" type="submit" value="Buscar">
+        </nav>
+
+        <ul class="home">
+            <article><a class="home-font" href="./index.html" target="_blank">Home</a></article>
+            <article><a class="home-font" href="./detalles_peliculas.html" target="_blank">Detalles peliculas</a></article>
+            <article><a class="home-font" href="./detalles_series.html" target="_blank">Detalles series</a>
+            </article>
+            <article><a class="home-font" href="./favoritos.html" target="_blank">Favortitos</a></article>
+            <article><a class="home-font" href="./generos.html" target="_blank">Géneros</a></article>
+            <article><a class="home-font" href="./detalles_de_genero.html" target="_blank">Detalles de Géneros</a>
+            </article>
+            <article><a class="home-font" href="./resultadosbusqueda.html" target="_blank">Resultados de búsqueda</a>
+            </article>
+            
+        </ul>
+    </header>
     <p>Estos son tus resultados</p>
     <a href="./index.html"> Volver al incio </a>
 </body>
