@@ -1,7 +1,9 @@
-*{box-sizing:border-box;}
+* {
+    box-sizing: border-box;
+}
 
 
-header{
+header {
     background-image: URL("../img/logos\ y\ backgrounds/Background-Barbie-Wallpaper.jpg");
     background-size: cover all;
     background-repeat: no-repeat;
@@ -9,50 +11,54 @@ header{
     margin-bottom: 10px;
 }
 
-body{
+body {
     background-color: rgb(234, 144, 201);
 }
 
 
-main{
+main {
     max-width: auto;
     background-image: url("../img/logos y backgrounds/fondomain.jpg.avif");
-    padding: 20px; 
+    padding: 20px;
 }
 
-.usuario{
+.usuario {
     text-align: end;
+
 }
 
-.login-font, .register-font{
+.login-font,
+.register-font {
     color: rgb(146, 9, 171);
-    font-family:'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: large;
     text-decoration: none;
+   
 }
 
-.login, .register{
+.login,
+.register {
     background: rgb(225, 176, 204);
     border: 0;
     border-radius: 10%;
 }
 
-.logo{
+.logo {
     margin: 0 auto;
     align-self: center;
     text-align: center;
 }
 
-.logo img{
+.logo img {
     width: 120px;
 }
 
-.titulo{
+.titulo {
     font-family: 'Barbie', sans-serif;
     color: rgb(218, 52, 149);
     font-size: 60px;
     text-align: center;
-    text-shadow: 
+    text-shadow:
         -2px -2px 0 rgba(255, 255, 255, 0.779),
         2px -2px 0 white,
         -2px 2px 0 white,
@@ -60,21 +66,21 @@ main{
 
 }
 
-h1{
+h1 {
     margin: 0;
 
 }
 
-.pagina-principal{
+.pagina-principal {
     flex-direction: row;
 }
 
-.barra{
+.barra {
     text-align: center;
 
 }
 
-.busqueda{
+.busqueda {
     font-size: 20px;
     font-family: 'Cormorant Garamond', serif;
     background-color: rgba(241, 187, 196, 0.887);
@@ -83,29 +89,30 @@ h1{
 }
 
 
-.buscar{
+.buscar {
     font-size: 20px;
     font-family: 'Cormorant Garamond', serif;
     color: rgb(146, 9, 171);
     background-color: rgba(241, 187, 196, 0.887);
-    border:0;
+    border: 0;
 }
 
-.home{
+.home {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 20px;
- 
-    
-      
-    
+
+
+
+
+
 }
 
 
 
-.home-font{
+.home-font {
     display: flex;
     flex-wrap: wrap;
     color: rgba(241, 187, 196, 0.887);
@@ -117,19 +124,22 @@ h1{
     height: auto;
     padding: 10px;
     border-radius: 10%;
+    margin-bottom: 20px;
 
-  
-    text-align: center;}
-    .home-font:last-child {
-        margin-right: 0;
-    }
+
+    text-align: center;
+}
+
+.home-font:last-child {
+    margin-right: 0;
+}
 
 .home-font:first-child {
-        margin-left:0;
-    }
+    margin-left: 0;
+}
 
 .articulo {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -144,17 +154,17 @@ h1{
 }
 
 
-.section{
-    display: flex ;
+.section {
+    display: flex;
     justify-content: space-between;
 
-    }
-    
-h2{
+}
+
+h2 {
     font-family: 'Barbie', sans-serif;
     color: rgb(218, 52, 149);
     font-size: 50px;
-    text-shadow: 
+    text-shadow:
         -1px -1px 0 rgba(255, 255, 255, 0.779),
         1px -1px 0 white,
         -1px 1px 0 white,
@@ -163,12 +173,12 @@ h2{
 
 }
 
-footer{
+footer {
     margin-top: 20px;
-    
+
 }
 
-footer p{
+footer p {
     margin-top: 20px;
     color: rgba(241, 187, 196, 0.887);
     text-decoration: none;
@@ -181,4 +191,48 @@ footer p{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.Registrarse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-top: 30px;
+    flex-direction: column;
+}
+
+.Registrarse label {
+    background-color: rgba(226, 43, 162, 0.595);
+    border-radius: 10px;
+    font-size: large;
+    font-family: 'Cormorant Garamond', serif;
+    color: rgb(146, 9, 171);
+    background-color: rgba(241, 187, 196, 0.887);
+    border: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+.Registrarse input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid rgb(146, 9, 171);
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.Registrarse button {
+    background-color:rgb(146, 9, 171);
+    color: rgb(228, 116, 183);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(241, 187, 196, 0.887)
+    
 }
