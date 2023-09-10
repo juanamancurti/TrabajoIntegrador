@@ -196,9 +196,13 @@ footer p {
 .Registrarse {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
    margin-top: 30px;
     flex-direction: column;
+    margin-left: 50px;
+    
+    
+
 }
 
 .Registrarse label {
@@ -212,6 +216,7 @@ footer p {
     width: 100%;
     text-align: center;
     padding: 10px;
+
   }
 
 .Registrarse input {
