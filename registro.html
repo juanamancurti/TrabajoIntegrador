@@ -3,18 +3,54 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pink Studio/ Registro</title>
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Pink Studio</title>
     <link rel="icon" href="./img/logos y backgrounds/Logo rosa.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/barbie">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Open+Sans&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Open+Sans&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
+    <header>
+        <div class="usuario">
+            <button class="register">
+                <a class="register-font" href="./registro.html">Registrarse</a>
+            </button>
+
+            <button class="login">
+                <a class="login-font" href="./login.html">Ingresar</a>
+            </button>
+        </div>
+
+        <div class="logo">
+            <img src="./img/logos y backgrounds/Logo blanco.png">
+        </div>
+        <div class="titulo">
+            <h1>Pink Studio</h1>
+        </div>
+
+        <nav>
+            <form class="barra" action="./resultadosbusqueda.html" method="get">
+                <input class="busqueda" type="text" id="busqueda" name="busqueda" placeholder="Escribe aquí tu búsqueda"
+                    required>
+                <input class="buscar" type="submit" value="Buscar">
+        </nav>
+        <nav>
+            <section class="home">
+                <article><a class="home-font" href="./index.html">Home</a></article>
+                <article><a class="home-font" href="./favoritos.html">Favoritos</a></article>
+                <article><a class="home-font" href="./generos.html">Géneros</a></article>
+            </section>
+        </nav>
+
+
+    </header>
     <form action="login.html" method="GET">
         <div>
             <label for="nombre de usario">Nombre de usario:</label>
