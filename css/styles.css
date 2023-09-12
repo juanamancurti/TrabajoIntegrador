@@ -5,7 +5,7 @@
 
 header {
     background-image: URL("../img/logos\ y\ backgrounds/Background-Barbie-Wallpaper.jpg");
-    background-size: cover all;
+    background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
     margin-bottom: 10px;
@@ -17,14 +17,13 @@ body {
 
 
 main {
-    max-width: auto;
+    max-width: 100%;
     background-image: url("../img/logos y backgrounds/fondomain.jpg.avif");
     padding: 20px;
 }
 
 .usuario {
     text-align: end;
-
 }
 
 .login-font,
@@ -160,7 +159,9 @@ h2 {
     font-family: 'Cormorant Garamond', serif;
     color: rgb(146, 9, 171);
     font-size: 45px;
-    text-decoration: underline;
+    text-decoration: unde;
+    background-color: rgba(247, 103, 197, 0.411);
+    
 
 }
 
@@ -220,53 +221,51 @@ footer {
     align-items: center;
     padding: 10px;
     margin-top: 20px;
+    justify-content: center;
+    
 }
 
 footer p{
     color: rgba(241, 187, 196, 0.887);
     text-decoration: none;
-    font-size: 20px;
+    font-size: small;
     margin: 10px;
-
 }
 
-.main_peliculas{
-    max-width: auto;
-}
-
-.section_pelis{
-display: inline-block;
-}
-
-.articulo_pelis{
-    padding: 10px;
+.articulo_peli{
+    display: flex;
+    flex-direction: row;
     background-color: rgb(164, 22, 115);
-    width: auto;
-    height: auto;
+}
 
+ .div_imagen img {
+       max-width: 450px;
+       height: 80%;
+    justify-self: flex-start;
+      margin: 15px;
+      align-content: center;
+    }
+
+
+ .div_info{
+        text-align: left;
+        color:rgba(241, 187, 196, 0.887);
+        font-size: auto;
+        font-weight:'Cormorant Garamond', serif;
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        justify-self: flex-end;
+        align-self: center;
+    }
     
-}
-.articulo_pelis img {
-    width: 400px;
-    height: auto;
-}
-.articulo_pelis p{
-    text-align: left;
-    color:rgba(241, 187, 196, 0.887);
-    font-size: auto;
-    font-weight:'Cormorant Garamond', serif;
-}
+    
+    .articulo_pelis a{
+        color:rgba(249, 148, 165, 0.887);
+        text-decoration: none;
+    
+    }
 
-.articulo_pelis h3{
-    text-align: left;
-    color:rgba(241, 187, 196, 0.887);
-    font-size: auto;
-    font-weight:'Cormorant Garamond', serif;
-}
 
-.articulo_pelis a{
-    color:rgba(249, 148, 165, 0.887);
-    text-decoration: none;
-}
 
 
