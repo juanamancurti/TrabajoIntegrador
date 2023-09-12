@@ -33,7 +33,6 @@ main {
     font-family: 'Cormorant Garamond', serif;
     font-size: large;
     text-decoration: none;
-   
 }
 
 .login,
@@ -88,7 +87,6 @@ h1 {
     color: rgb(146, 9, 171);
 }
 
-
 .buscar {
     font-size: 20px;
     font-family: 'Cormorant Garamond', serif;
@@ -103,13 +101,7 @@ h1 {
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 20px;
-
-
-
-
-
 }
-
 
 
 .home-font {
@@ -125,8 +117,6 @@ h1 {
     padding: 10px 100px 10px 100px;
     border-radius: 10%;
     margin-bottom: 20px;
-
-
     text-align: center;
 }
 
@@ -164,8 +154,6 @@ h1 {
 .section {
     display: flex;
     justify-content: space-between;
-   
-
 }
 
 h2 {
@@ -176,7 +164,6 @@ h2 {
 
 }
 
-
 .Registrarse {
     display: flex;
     justify-content: center;
@@ -184,9 +171,6 @@ h2 {
    margin-top: 30px;
     flex-direction: column;
     margin-left: 50px;
-    
-    
-
 }
 
 .Registrarse label {
@@ -245,3 +229,44 @@ footer p{
     margin: 10px;
 
 }
+
+.main_peliculas{
+    max-width: auto;
+}
+
+.section_pelis{
+display: inline-block;
+}
+
+.articulo_pelis{
+    padding: 10px;
+    background-color: rgb(164, 22, 115);
+    width: auto;
+    height: auto;
+
+    
+}
+.articulo_pelis img {
+    width: 400px;
+    height: auto;
+}
+.articulo_pelis p{
+    text-align: left;
+    color:rgba(241, 187, 196, 0.887);
+    font-size: auto;
+    font-weight:'Cormorant Garamond', serif;
+}
+
+.articulo_pelis h3{
+    text-align: left;
+    color:rgba(241, 187, 196, 0.887);
+    font-size: auto;
+    font-weight:'Cormorant Garamond', serif;
+}
+
+.articulo_pelis a{
+    color:rgba(249, 148, 165, 0.887);
+    text-decoration: none;
+}
+
+
