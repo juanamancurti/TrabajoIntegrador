@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 ul{list-style: none;}
@@ -39,7 +41,7 @@ header {
     display: flex;
     justify-content: center;
     align-items:flex-start;
-   margin-top: 30px;
+    margin-top: 30px;
     flex-direction: column;
     margin-left: 50px;
 }
@@ -86,7 +88,7 @@ header {
 }
 
 .logo img {
-    width: 8%;
+    width: 150px;
 }
 
 .titulo {
@@ -128,11 +130,9 @@ h1 {
 .home {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: space-evenly;
     margin-top: 20px;
 }
-
 
 .home-font {
     display: flex;
@@ -141,7 +141,6 @@ h1 {
     text-decoration: none;
     background-color: rgb(146, 9, 171);
     font-size: 25px;
-    box-sizing: border-box;
     width: auto;
     height: auto;
     padding: 10px 100px 10px 100px;
@@ -171,8 +170,10 @@ h2 {
     text-decoration: underline;
     background-color: rgba(241, 187, 196, 0.887);
 }
+
 .section {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -183,12 +184,12 @@ h2 {
     padding: 10px;
     background-color: rgb(164, 22, 115);
     align-items: center;
-    margin: 20px;
+    margin: 15px;
 }
 
 .articulo img {
-    width: 12vw;
-    height: 30vh;
+    width: 200px;
+    height: 300px;
 }
 
 .articulo a {
@@ -203,6 +204,13 @@ h2 {
     text-decoration: none;
     font-size: auto;
     font-weight:'Cormorant Garamond', serif;
+}
+
+.articulo h4{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 45px;
+    margin: 0px;
+    color:rgba(241, 187, 196, 0.887);
 }
 
 .fondo-detalles-generos{
@@ -231,34 +239,35 @@ h2 {
 .articulo_detalles a{
     color:rgba(249, 148, 165, 0.887);
     text-decoration: none;
-
+}
+.articulo_detalles h3{
+    margin-bottom: 20px;
+}
+.articulo_detalles p{
+    margin-bottom: 10px;
 }
 
-.articulo li{
-    background-color: rgba(249, 148, 165, 0.887);
+.generos_lista{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    box-sizing: border-box;
+    justify-content: center;
+}
+
+.articulo div li{
+    background-color: rgba(249, 148, 165, 0.887);
+    display: flex;
     width: auto;
     height: auto;
     padding: 10px 100px;
     border-radius: 10%;
-    justify-content: space-between;
-    text-align: center;
     margin: 0px 15px 10px 15px;
     font-size: large;
+    justify-content: center;
 }
 
-.articulo div ul{
+.articulo ul{
     display: flex;
-}
-
-.articulo h4{
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 45px;
-    margin: 0px;
-    color:rgba(241, 187, 196, 0.887);
+    flex-direction: column;
 }
 
  .div_imagen img {
@@ -297,4 +306,67 @@ footer p{
     text-decoration: none;
     font-size: small;
     margin: 10px;
+}
+
+@media (max-width:420px) {
+.Registrarse {
+       margin: 0;
+}
+
+header {
+    background-image: URL("../img/logos y backgrounds/background_media.jpeg");
+}
+    
+.logo img {
+    width: 120px;
+}
+
+.titulo {
+    font-size: 40px;
+}
+
+.home {
+    justify-content: space-evenly;
+}
+
+.home-font {
+    font-size: 20px;
+    padding: 10px 30px 10px 30px;   
+}
+
+main {
+    background-color: rgb(241, 187, 196);
+    background-image: none  ;
+}
+
+.articulo_detalles{
+    flex-direction: column;
+    max-height: 80vh;
+    max-width: 90vw;
+   }
+
+.div_imagen img {
+    height: 60vw;
+    margin: 0;
+    padding: 10px;
+}
+
+.div_imagen  {  
+    align-self: center;
+}
+
+.div_info{
+    text-align: left;
+    font-size: small;
+    width: 98%;
+    padding: 10px;
+}
+
+.div_info h3{
+    margin-bottom: 20px;
+}
+footer p{
+    font-size: x-small;
+    margin: 2px;
+}
 }
