@@ -144,7 +144,14 @@ h1 {
     height: 30vh;
 }
 
-.articulo a{
+.articulo a {
+    color:rgba(241, 187, 196, 0.887);
+    text-decoration: none;
+    font-size: auto;
+    font-weight:'Cormorant Garamond', serif;
+}
+
+.articulo p{
     color:rgba(241, 187, 196, 0.887);
     text-decoration: none;
     font-size: auto;
