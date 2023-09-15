@@ -135,13 +135,11 @@ h1 {
     text-align: center;
     padding: 10px;
     background-color: rgb(164, 22, 115);
-
 }
 
 .articulo img {
     width: 200px;
     height: 300px;
-   
 }
 
 .articulo a{
@@ -160,7 +158,7 @@ h2 {
     font-family: 'Cormorant Garamond', serif;
     color: rgb(146, 9, 171);
     font-size: 45px;
-    text-decoration: unde;
+    text-decoration: underline;
     background-color: rgba(241, 187, 196, 0.887);
     
 
@@ -229,7 +227,7 @@ footer {
 footer p{
     color: rgba(241, 187, 196, 0.887);
     text-decoration: none;
-    font-size: medium;
+    font-size: small;
     margin: 10px;
 }
 
@@ -269,6 +267,73 @@ footer p{
     
     }
 
+    .articulo li{
+        background-color: rgba(249, 148, 165, 0.887);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: auto;
+        height: auto;
+        padding: 10px 100px;
+        border-radius: 10%;
+        justify-content: space-between;
+        text-align: center;
+        margin: 0px 15px 10px 15px;
+        font-size: large;
+    }
+.articulo div ul{
+    display: flex;
+}
+
+.articulo h4{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 45px;
+    margin: 0px;
+    color:rgba(241, 187, 196, 0.887);
+}
+
+.articulo_genero{
+background-color: rgb(241, 187, 196);
+color: rgb(164, 22, 115);
+display: flex;
+flex-direction: column;
+    
+}
+.articulo_genero p{
+    text-align: justify;
+    font-size: large;
+    padding: 10px;
+    
+}
+
+.articulo_generos img{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+    height: 80%;
+    background-color: rgb(164, 22, 115);
+    padding: 15px;
+}
+
+.articulo_generos a {
+    text-decoration: none;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+}
 
 
+.articulo_generos p{
+    text-align: center;
+    color: rgba(241, 187, 196, 0.887);
+justify-content: center;   
+ background-color: rgb(164, 22, 115);
+    padding: 10px;
+    margin: 0px;
+}
 
+.articulo_generos{
+    background-color: rgb(241, 187, 196);
+   
+}
