@@ -12,7 +12,7 @@ body {
 
 header {
     background-image: URL("../img/logos\ y\ backgrounds/Background-Barbie-Wallpaper.jpg");
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     margin-bottom: 10px;
