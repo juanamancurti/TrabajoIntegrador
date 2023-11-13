@@ -1,45 +1,48 @@
 //Resultado de Busqueda
-let ResultadosDeBusqueda=document.querySelector(".buscar");
 
-let nombresPeliculas = [
-    "Escuela de princesas",
-    "La princesa y la plebeya",
-    "Las 12 princesas bailarinas",
-    "El lago de los cisnes",
-    "Rapunzel",
-    "2023",
-    "Life in the Dreamhouse",
-    "Dreamtopia",
-    "Somos dos",
-    "Vlogger",
-    "Dreamhouse Adventures",
-    "A touch of magic",
-    "y las tres mosqueteras",
-    "Mariposa",
-    "La princesa de la isla",
-    "y la magia del pegaso",
-    "Fairytopia",
-    "Cascanueces"
-];
 
-let encontrado = false;
+let queryString=location.search;
+let queryStringObj= new URLSearchParams(queryString);
+let palabraBuscada = queryStringObj.get('busqueda');
+let resultados=document.querySelector(".resultados");
 
-ResultadosDeBusqueda.addEventListener('click', 'submit', function(){
-    for (let i = 0; i < nombresPeliculas.length; i++) {
-        if (ResultadosDeBusqueda.toLowerCase() === nombresPeliculas[i].toLowerCase()) {
-            // Mostrar la película correspondiente
-            let elementosPeliculas = document.querySelectorAll('.articulo');
-            for (let j = 0; j < elementosPeliculas.length; j++) {
-                elementosPeliculas[j].style.display = j === i ? "block" : "none";
-            }
 
-            encontrado = true;
-            break; // Salir del bucle una vez que se haya encontrado la película
+
+let ApiKey="1173214cf5e2ac8f2c0ac1c242d0ec8a";
+let endPoint= `https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${palabraBuscada}`
+    fetch(endPoint)
+        .then (function(response) {
+            return response.json();
+        })
+        .then (function(data){
+            if(data.results.length===0){
+
+                let noHayResultado=document.querySelector("main").
+                noHayResultado.innerHTML = "No hay resultado de busqueda";
+                noHayResultado.style.fontSize = "45px";
+           } else {
+                let pelicula= data.results; //Todas las peliculas
+                let contenido= "";
+                for (let i=0; i< 5; i++){
+            
+                 contenido+= `<article class="articulo">
+                 <a href="./detalles_peliculas.html"> <img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}"></a>
+                 <a href="./detalles_peliculas.html?id=${pelicula[i].id}">
+                 </a>
+                 <p>${pelicula[i].title}</p>
+                 <p>${pelicula[i].release_date}</p>
+                 </article>`
+           }
+        resultados.innerHTML = contenido;
         }
-    }
-    // Si no se encuentra ninguna película, mostrar el mensaje de no resultados
-    if (!encontrado) {
-        let NoHayResultado = document.querySelector("main").innerHTML = "No hay resultado de búsqueda";
-        NoHayResultado.style.fontSize = "45px";
-    }
-});
+        
+    })
+
+        .catch(function(error){
+         console.log('El error es: ' + error);
+     });
+     
+
+
+        
+
