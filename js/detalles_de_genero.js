@@ -6,10 +6,13 @@
 // si no existe el genero tiene indicar error 
 
 //Asiganamos variables
+let qS = location.search
+let qSObj = new URLSearchParams(qS)
+let idGenero = qSObj.get("id")
 let ApiKey=  "1173214cf5e2ac8f2c0ac1c242d0ec8a";
-let discover = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&api_key=${ApiKey}`;
+let discover = `https://api.themoviedb.org/3/discover/movie?with_genres=${idGenero}&api_key=${ApiKey}`;
 
-
+console.log(discover)
 //Dom 
 let detalles_de_genero=document.querySelector(".detalles");
 
@@ -27,8 +30,8 @@ fetch(discover)
     for (let i=0; i< 12; i++){
         
         contenido+= `<article class="articulo">
-                        <a href="./detalles_peliculas.html?id=${pelicula[i].id}"><img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}">
-                        <a href="./detalles_peliculas.html?id=${pelicula[i].id}">
+                        <a href="detalles_peliculas.html?id=${pelicula[i].id}"><img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}">
+                        <a href="detalles_peliculas.html?id=${pelicula[i].id}">
                         <p>${pelicula[i].title}</p>
                         <p>${pelicula[i].release_date}</p>
                         </a>
@@ -38,4 +41,5 @@ fetch(discover)
     detalles_de_genero.innerHTML = contenido;
     
 })
+
 

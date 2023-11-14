@@ -22,7 +22,7 @@ fetch(TopRated)
     for (let i=0; i< 5; i++){
         
         contenido+= `<article class="articulo">
-                        <a href="./detalles_peliculas.html?id=${pelicula[i].id}">
+                        <a href="detalles_peliculas.html?id=${pelicula[i].id}">
                             <img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}">
                     </a>
                         <p>${pelicula[i].title}</p>
@@ -53,7 +53,7 @@ fetch(SeriesPopulares)
     for (let i=0; i< 5; i++){
         
         contenido+= `<article class="articulo">
-                          <a href="./detalles_series.html?id=${series[i].id}">
+                          <a href="detalles_series.html?id=${series[i].id}">
                               <img src="https://image.tmdb.org/t/p/w500${series[i].poster_path}">
                          </a>
                         <h3>${series[i].name}</h3>
@@ -83,7 +83,7 @@ fetch(PeliculasPopulares)
     for (let i=0; i< 5; i++){
         
         contenido+= `<article class="articulo">
-                        <a href="./detalles_peliculas.html?id=${peliculaPop[i].id}">
+                        <a href="detalles_peliculas.html?id=${peliculaPop[i].id}">
                             <img src="https://image.tmdb.org/t/p/w500${peliculaPop[i].poster_path}">
                     </a>
                         <p>${peliculaPop[i].title}</p>

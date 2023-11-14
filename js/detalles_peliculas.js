@@ -4,9 +4,9 @@ let queryStringObj= new URLSearchParams(queryString);
 let id_peli = queryStringObj.get('id');
 console.log(id_peli);
 // DOM
-let imagenPeli = document.querySelector(".imgPeli")
+let imagenPeli = document.querySelector(".div_imagen")
 let tituloPeli = document.querySelector(".titlePeli")
-let califiacion = document.querySelector(".calificacionPeli")
+let calificacion = document.querySelector(".calificacionPeli")
 let fechaEstreno =document.querySelector(".fechaEstrenoPeli")
 let duracion = document.querySelector(".duracionPeli")
 let sinopsis = document.querySelector(".sinopsisPeli")
@@ -15,7 +15,7 @@ let favoritos = document.querySelector(".fav")
 
 // Asignamos variables 
 let ApiKey=  "1173214cf5e2ac8f2c0ac1c242d0ec8a";
-let detalles_peli = `https://api.themoviedb.org/3/tv/${id_peli}?api_key=${ApiKey}`
+let detalles_peli = `https://api.themoviedb.org/3/movie/${id_peli}?api_key=${ApiKey}`
 
 
 fetch(detalles_peli)
@@ -23,37 +23,36 @@ fetch(detalles_peli)
     return response.json();
   })
   .then(function(data) {
+    console.log(data)
     let detallePel = data.genres;
-    console.log(detallePel);
-    let contenido = "";
     let gnPeli = "";
     for (let i = 0; i < detallePel.length; i++) {
-      gnPeli += `<p>Género: <a href="./detalles_de_genero.html?id=${detallePel[i].id}">${detallePel[i].name}</a></p>`;
+      console.log(detallePel[i].name)
+      gnPeli += `<a href="detalles_de_genero.html?id=${detallePel[i].id}">${detallePel[i].name} </a>`;
     }
 
     // Agregar botón de favoritos
-    favoritos.innerHTML += `<div class="contenedorHijo">
-                              <button class="botonFav">Agregar a favoritos</button>
-                            </div>`;
+    // favoritos.innerHTML += `<div class="contenedorHijo">
+    //                           <button class="botonFav">Agregar a favoritos</button>
+    //                         </div>`;
 
-    let botonFav = document.querySelector(".botonFav");
+    // let botonFav = document.querySelector(".botonFav");
 
-    botonFav.addEventListener("click", function() {
-      if (this.style.backgroundColor === "red") {
-        this.style.backgroundColor = "green";
-        this.innerHTML = "Agregar a Favoritos";
-      } else {
-        this.style.backgroundColor = "red";
-        this.innerHTML = "Quitar de favoritos";
-      }
-    });
+    // botonFav.addEventListener("click", function() {
+    //   if (this.style.backgroundColor === "red") {
+    //     this.style.backgroundColor = "green";
+    //     this.innerHTML = "Agregar a Favoritos";
+    //   } else {
+    //     this.style.backgroundColor = "red";
+    //     this.innerHTML = "Quitar de favoritos";
+    //   }
+    // });
 
-    contenido += gnPeli;
-    genero.innerHTML = contenido;
-    imagenPeli.src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
-    tituloPeli.innerHTML = data.original_name;
-    calificacion.innerHTML = data.vote_average;
-    fechaEstreno.innerHTML = data.first_air_date;
+    genero.innerHTML = gnPeli;
+    imagenPeli.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${data.poster_path}">`
+    tituloPeli.innerHTML =  data.title;    ;
+    calificacion.innerHTML = `<p> Calificacion: ${data.vote_average}</p> `;
+    fechaEstreno.innerHTML = data.release_date;
     sinopsis.innerHTML = data.overview;
   })
   .catch(function(error) {
