@@ -9,7 +9,7 @@ let tituloSerie = document.querySelector(".titleSerie")
 let califiacion = document.querySelector(".calificacionSerie")
 let fechaEstreno =document.querySelector(".fechaEstrenoSerie")
 let duracion = document.querySelector(".duracionSerie")
-let sinopsis = document.querySelector(".sinópsisSerie")
+let sinopsis = document.querySelector(".sinopsisSerie")
 let genero = document.querySelector(".generoSerie")
 
 // Asignamos variables 
@@ -44,4 +44,3 @@ fetch(detalles_series)
   });
 
 
-  
