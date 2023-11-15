@@ -275,14 +275,24 @@ h2 {
     
 .div_info{
     text-align: left;
-    color:rgba(241, 187, 196, 0.887);
-    font-size: auto;
-    font-family:'Cormorant Garamond', serif;
     display: flex;
     flex-direction: column;
     width: 60%;
     justify-self: flex-end;
     align-self: center;
+}
+
+.div_info h3{
+    color:rgba(241, 187, 196, 0.887);
+    font-size: x-large;
+    font-family:'Cormorant Garamond', serif;
+    margin-bottom: 20px;
+}
+
+.div_info p{
+    color:rgba(241, 187, 196, 0.887);
+    font-size: large;
+    font-family:'Cormorant Garamond', serif;
 }
 
 footer {

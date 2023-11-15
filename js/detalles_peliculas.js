@@ -8,7 +8,7 @@ let imagenPeli = document.querySelector(".div_imagen")
 let tituloPeli = document.querySelector(".titlePeli")
 let calificacion = document.querySelector(".calificacionPeli")
 let fechaEstreno =document.querySelector(".fechaEstrenoPeli")
-let duracion = document.querySelector(".duracionPeli")
+let duracionP = document.querySelector(".duracionPeli")
 let sinopsis = document.querySelector(".sinopsisPeli")
 let genero = document.querySelector(".generoPeli")
 let favoritos = document.querySelector(".fav")
@@ -48,13 +48,16 @@ fetch(detalles_peli)
     //   }
     // });
 
-    genero.innerHTML = gnPeli;
+   
     imagenPeli.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${data.poster_path}">`
-    tituloPeli.innerHTML =  data.title;    ;
-    calificacion.innerHTML = `<p> Calificacion: ${data.vote_average}</p> `;
-    fechaEstreno.innerHTML = data.release_date;
-    sinopsis.innerHTML = data.overview;
+    tituloPeli.innerHTML =  data.title;    
+    calificacion.innerHTML = `<p> Calificación: ${data.vote_average}</p> `; 
+    duracionP.innerHTML = `<p> Duración: ${data.runtime} minutos</p> `; 
+    genero.innerHTML = `<p> Género: ${gnPeli}</p> `;
+    fechaEstreno.innerHTML = `<p> Estreno: ${data.release_date}</p> `;
+    sinopsis.innerHTML = `<p> Sinopsis: ${data.overview}}</p> `;
   })
+
   .catch(function(error) {
     console.log('El error es: ' + error);
   });
