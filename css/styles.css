@@ -157,8 +157,9 @@ h1 {
 
 main {
     max-width: 100%;
-    background-image: url("../img/logosybackgrounds/fondomain.jpg.avif");
+    background-color: rgba(241, 187, 196, 0.948);
     padding: 20px;
+    margin: 20px;
 }
 
 h2 {
@@ -183,6 +184,10 @@ h2 {
     background-color: rgb(164, 22, 115);
     align-items: center;
     margin: 15px;
+    color: rgba(241, 187, 196, 0.887);
+    font-family:'Cormorant Garamond', serif;
+    width: 230px;
+    height: 380px;
 }
 
 .articulo img {
@@ -190,41 +195,16 @@ h2 {
     height: 300px;
 }
 
-.articulo a {
-    color:rgba(241, 187, 196, 0.887);
-    text-decoration: none;
-    font-size: auto;
-    font-family:'Cormorant Garamond', serif;
-}
-
-.articulo p{
-    color:rgb(241, 187, 196);
-    text-decoration: none;
-    font-size: auto;
-    font-family:'Cormorant Garamond', serif;
-}
-
-.articulo h4{
+.articulo a{
     font-family: 'Cormorant Garamond', serif;
-    font-size: 45px;
+    font-size: auto;
     margin: 0px;
     color:rgba(241, 187, 196, 0.887);
+    text-decoration: none;
 }
 
 .fondo-detalles-generos{
     background-color: rgb(241, 187, 196);
-}
-
-.articulo_genero{
-    color: rgb(164, 22, 115);
-    display: flex;
-    flex-direction: column;
-}
-
-.articulo_genero p{
-    text-align: justify;
-    font-size: large;
-    padding: 10px 30px 10px 30px;
 }
 
 .articulo_detalles{
@@ -247,20 +227,39 @@ h2 {
 
 .generos_lista{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.articulo div li{
-    background-color: rgba(249, 148, 165, 0.887);
-    display: flex;
+    text-align: center;
+    padding: 10px;
+    align-items: center;
+    color: rgba(241, 187, 196, 0.887);
+    font-family:'Cormorant Garamond', serif;
+    font-size: large;
     width: auto;
     height: auto;
-    padding: 10px 100px;
+}
+
+.articulo_gen{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(164, 22, 115);
+    align-items: center;
+    margin: 20px;
+    color: rgba(241, 187, 196, 0.887);
+    font-size: xx-large;
+    font-family:'Cormorant Garamond', serif;
+    
+}
+
+.articulo_gen a{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: x-large;
+    color:rgba(241, 187, 196, 0.887);
+    text-decoration: none;
+    background-color: rgba(249, 148, 165, 0.887);
+    padding: 10px 30px;
+    margin:20px;
     border-radius: 10%;
-    margin: 0px 15px 10px 15px;
-    font-size: large;
-    justify-content: center;
 }
 
 .articulo ul{
@@ -306,13 +305,24 @@ footer p{
     margin: 10px;
 }
 
+.foto_footer{
+    display:flex;
+    flex-wrap: wrap;
+    width: 50px;
+    height: 50px;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
 @media (max-width:420px) {
 .Registrarse {
        margin: 0;
 }
 
 header {
-    background-image: URL("../img/logosybackgrounds/background_media.jpeg");
+    background-color: rgb(232, 98, 189);
+    background-image: none  ;
 }
     
 .logo img {
@@ -332,10 +342,6 @@ header {
     padding: 10px 30px 10px 30px;   
 }
 
-main {
-    background-color: rgb(241, 187, 196);
-    background-image: none  ;
-}
 
 .articulo_detalles{
     flex-direction: column;

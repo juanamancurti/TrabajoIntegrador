@@ -9,37 +9,67 @@
 let qS = location.search
 let qSObj = new URLSearchParams(qS)
 let idGenero = qSObj.get("id")
-let ApiKey=  "1173214cf5e2ac8f2c0ac1c242d0ec8a";
+let ApiKey = "1173214cf5e2ac8f2c0ac1c242d0ec8a";
 let discover = `https://api.themoviedb.org/3/discover/movie?with_genres=${idGenero}&api_key=${ApiKey}`;
+let discoverTv = `https://api.themoviedb.org/3/discover/tv?with_genres=${idGenero}&api_key=${ApiKey}`;
 
 console.log(discover)
+console.log(discoverTv)
 //Dom 
-let detalles_de_genero=document.querySelector(".detalles");
+let detalles_de_genero = document.querySelector(".detalles");
 
 
 //Fetch Peliculas
 fetch(discover)
-.then(function(response){
-    return response.json();
-})
-.then(function(data){
-    let pelicula= data.results; //Todas las peliculas
-    console.log(pelicula)
-    
-    let contenido= "";
-    for (let i=0; i< 12; i++){
-        
-        contenido+= `<article class="articulo">
-                        <a href="detalles_peliculas.html?id=${pelicula[i].id}"><img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}">
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        let pelicula = data.results; //Todas las peliculas
+        console.log(pelicula)
+
+        let contenido = "";
+        for (let i = 0; i < 12; i++) {
+
+            contenido += `<article class="articulo">
+                        <a href="detalles_peliculas.html?id=${pelicula[i].id}"> </a>
+                        <img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}">
                         <a href="detalles_peliculas.html?id=${pelicula[i].id}">
                         <p>${pelicula[i].title}</p>
                         <p>${pelicula[i].release_date}</p>
                         </a>
                         </article>`
-    }
+        }
 
-    detalles_de_genero.innerHTML = contenido;
-    
-})
+        detalles_de_genero.innerHTML = contenido;
+
+    })
+
+//Fetch Series
+fetch(discoverTv)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        let tv = data.results; //Todas las series
+        console.log(tv)
+
+        let contenido = "";
+        for (let i = 0; i < 12; i++) {
+
+            contenido += `<article class="articulo">
+                        <a href="detalles_series.html?id=${tv[i].id}"> </a>
+                        <img src="https://image.tmdb.org/t/p/w500${tv[i].poster_path}">
+                        <a href="detalles_series.html?id=${tv[i].id}">
+                        <p>${tv[i].original_name}</p>
+                        <p>${tv[i].first_air_date}</p>
+                        </a>
+                        </article>`
+        }
+
+        detalles_de_genero.innerHTML = contenido;
+
+    })
+
 
 
