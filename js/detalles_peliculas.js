@@ -12,11 +12,12 @@ let duracionP = document.querySelector(".duracionPeli")
 let sinopsis = document.querySelector(".sinopsisPeli")
 let genero = document.querySelector(".generoPeli")
 let favoritos = document.querySelector(".fav")
+let recomendaciones = document.querySelector(".reco")
 
 // Asignamos variables 
 let ApiKey=  "1173214cf5e2ac8f2c0ac1c242d0ec8a";
 let detalles_peli = `https://api.themoviedb.org/3/movie/${id_peli}?api_key=${ApiKey}`
-
+let recomendacionesApi = `https://api.themoviedb.org/3/movie/${id_peli}/recommendations?api_key=${ApiKey}`
 
 fetch(detalles_peli)
   .then(function(response) {
@@ -62,4 +63,31 @@ fetch(detalles_peli)
     console.log('El error es: ' + error);
   });
 
+// Ver recomendaciones
+recomendaciones.addEventListener("click", function(){
+  fetch(recomendacionesApi)
+    .then(function(response) {
+      return response.json();
+    })
 
+    .then(function(data) {
+      console.log(data)
+      recomendacionesPeli = data.results // Todas las recomendaciones
+      let contenido = "";
+      for (let i = 0; i < 5; i++) {
+
+      contenido+= `<article class="articulo_reco">
+                          <a href="detalles_peliculas.html?id=${recomendacionesPeli[i].id}">
+                          <img src="https://image.tmdb.org/t/p/w500${recomendacionesPeli[i].poster_path}">
+                          <p>${recomendacionesPeli[i].original_title}</p></a>
+                          </article>`
+        
+      }
+      recomendaciones.innerHTML = contenido;
+    })
+
+    .catch(function(error) {
+      console.log('El error es: ' + error);
+    });
+
+})

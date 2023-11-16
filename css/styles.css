@@ -125,6 +125,13 @@ h1 {
     border: 0;
 }
 
+.busq h2{
+    font-size: 35px;
+    font-family: 'Cormorant Garamond', serif;
+    color: rgb(146, 9, 171);
+    text-decoration: none;
+}
+
 .home {
     display: flex;
     flex-wrap: wrap;
@@ -250,6 +257,49 @@ h2 {
     font-family:'Cormorant Garamond', serif;
     
 }
+.articulo_reco{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(164, 22, 115);
+    align-items: center;
+    margin: 15px;
+    color: rgba(241, 187, 196, 0.887);
+    font-family:'Cormorant Garamond', serif;
+    width: auto;
+    height: auto;
+}
+
+.reco{
+    display:flex;
+}
+
+.articulo_reco a{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(164, 22, 115);
+    align-items: center;
+    margin: 15px;
+    color: rgba(241, 187, 196, 0.887);
+    font-family:'Cormorant Garamond', serif;
+    width: 230px;
+    height: 380px;
+}
+.articulo_reco a img{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    margin: 15px;
+    width: 230px;
+    height: 380px;
+}
+
+
+
 
 .articulo_gen a{
     font-family: 'Cormorant Garamond', serif;
