@@ -43,7 +43,7 @@ fetch(generoSer)
     return response.json();
 })
 .then(function(data){
-    let series= data.results; //Todas las peliculas
+    let series= data.results; //Todas las series
     console.log(series)
 
     let contenido= "";

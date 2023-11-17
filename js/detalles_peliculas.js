@@ -75,6 +75,7 @@ recomendaciones.addEventListener("click", function(){
     .then(function(data) {
       console.log(data)
       recomendacionesPeli = data.results // Todas las recomendaciones
+      if (recomendacionesPeli.length !== 0){
       let contenido = "";
       for (let i = 0; i < 5; i++) {
 
@@ -84,10 +85,16 @@ recomendaciones.addEventListener("click", function(){
         
       }
       divRecomendaciones.innerHTML = contenido;
+    }
+      else {
+  
+        divRecomendaciones.innerHTML = `<h2> No hay recomendaciones </h2>`;
+      }
     })
 
-    .catch(function(error) {
-      console.log('El error es: ' + error);
-    });
+// Dejar de ver recomendaciones
+recomendaciones.addEventListener("click", function(){
+  divRecomendaciones.style.display = "none";
+})
 
 })
