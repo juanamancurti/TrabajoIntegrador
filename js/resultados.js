@@ -6,6 +6,7 @@ let queryStringObj= new URLSearchParams(queryString);
 let palabraBuscada = queryStringObj.get('busqueda');
 let resultados=document.querySelector(".resultados");
 let noHayResultado=document.querySelector("main");
+let nombreRes = document.querySelector(".nombreRes")
 let ApiKey="1173214cf5e2ac8f2c0ac1c242d0ec8a";
 let endPoint= `https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${palabraBuscada}`
 let endPointTv= `https://api.themoviedb.org/3/search/tv?api_key=${ApiKey}&query=${palabraBuscada}`
@@ -31,6 +32,7 @@ let endPointTv= `https://api.themoviedb.org/3/search/tv?api_key=${ApiKey}&query=
                  </article>`
            }
         resultados.innerHTML = contenido;
+        nombreRes.innerHTML = `<h2>Resultado de búsqueda para "${palabraBuscada}" </h2>`
         }
         
     })
@@ -59,6 +61,7 @@ let endPointTv= `https://api.themoviedb.org/3/search/tv?api_key=${ApiKey}&query=
                  </article>`
            }
         resultados.innerHTML = contenido;
+        nombreRes.innerHTML = `<h2>Resultado de búsqueda para "${palabraBuscada}" </h2>`
         }
         
     })
