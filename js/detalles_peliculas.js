@@ -12,7 +12,7 @@ let fechaEstreno = document.querySelector(".fechaEstrenoPeli")
 let duracionP = document.querySelector(".duracionPeli")
 let sinopsis = document.querySelector(".sinopsisPeli")
 let genero = document.querySelector(".generoPeli")
-let favoritos = document.querySelector(".fav")
+let favoritos = document.querySelector(".botonFav")
 let recomendaciones = document.querySelector(".reco")
 let divRecomendaciones = document.querySelector(".recomendaciones")
 
@@ -34,22 +34,7 @@ fetch(detalles_peli)
       gnPeli += `<a href="detalles_de_genero.html?id=${detallePel[i].id}&nombre=${detallePel[i].name}">${detallePel[i].name} </a>`;
     }
 
-    // Agregar botón de favoritos
-    // favoritos.innerHTML += `<div class="contenedorHijo">
-    //                           <button class="botonFav">Agregar a favoritos</button>
-    //                         </div>`;
 
-    // let botonFav = document.querySelector(".botonFav");
-
-    // botonFav.addEventListener("click", function() {
-    //   if (this.style.backgroundColor === "red") {
-    //     this.style.backgroundColor = "green";
-    //     this.innerHTML = "Agregar a Favoritos";
-    //   } else {
-    //     this.style.backgroundColor = "red";
-    //     this.innerHTML = "Quitar de favoritos";
-    //   }
-    // });
 
 
     imagenPeli.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${data.poster_path}">`
@@ -59,6 +44,46 @@ fetch(detalles_peli)
     genero.innerHTML = `<p> Género: ${gnPeli}</p> `;
     fechaEstreno.innerHTML = `<p> Estreno: ${data.release_date}</p> `;
     sinopsis.innerHTML = `<p> Sinopsis: ${data.overview}}</p> `;
+
+    //Agregar botón de favoritos
+
+    let favorito = false;
+    function estaEnFavoritosONo() {
+      // BUSCO EN LOCAL 
+
+      let favoritos_array = localStorage.getItem('favoritos')
+
+      if (favoritos_array) {
+        console.log('Hay local de favoritos')
+        let favoritos_parseado = JSON.parse(favoritos_array)
+        let estaEnFavorito = favoritos_parseado.includes(id_peli)
+        if (estaEnFavorito) {
+          favoritos.innerHTML += `Quitar de favoritos`;
+
+          favorito = true
+
+        } else {
+          favoritos.innerHTML = `Agregar a favoritos`;
+          favorito = false
+        }
+      }
+
+    }
+    estaEnFavoritosONo()
+
+    favoritos.addEventListener("click", function () {
+      if (this.style.backgroundColor === "red") {
+        this.style.backgroundColor = "green";
+        this.innerHTML = "Agregar a Favoritos";
+        let favs = [];
+        let favsString = JSON.stringify(favs);
+
+        localStorage.setItem('favsString')
+      } else {
+        this.style.backgroundColor = "red";
+        this.innerHTML = "Quitar de favoritos";
+      }
+    });
   })
 
   .catch(function (error) {
@@ -66,40 +91,45 @@ fetch(detalles_peli)
   });
 
 // Ver recomendaciones
+
+
+let recomendados = false
+
 recomendaciones.addEventListener("click", function () {
-  fetch(recomendacionesApi)
-    .then(function (response) {
-      return response.json();
-    })
+  if (recomendados) {
+    divRecomendaciones.innerHTML = ''
+    recomendaciones.innerText = `Ver recomendaciones`
+    recomendados = false
+  } else {
 
-    .then(function (data) {
-      console.log(data)
-      recomendacionesPeli = data.results // Todas las recomendaciones
-      if (recomendacionesPeli.length !== 0) {
-        let contenido = "";
-        for (let i = 0; i < 5; i++) {
+    fetch(recomendacionesApi)
+      .then(function (response) {
+        return response.json();
+      })
 
-          contenido += `<a href="detalles_peliculas.html?id=${recomendacionesPeli[i].id}">
-                          <img src="https://image.tmdb.org/t/p/w500${recomendacionesPeli[i].poster_path}">
-                          <p>${recomendacionesPeli[i].original_title}</p></a>`
+      .then(function (data) {
+        console.log(data)
+        let recomendacionesPeli = data.results // Todas las recomendaciones
+        if (recomendacionesPeli.length !== 0) {
+          let contenido = "";
+          for (let i = 0; i < 5; i++) {
 
+            contenido += `<a href="detalles_peliculas.html?id=${recomendacionesPeli[i].id}">
+          <img src="https://image.tmdb.org/t/p/w500${recomendacionesPeli[i].poster_path}">
+          <p>${recomendacionesPeli[i].original_title}</p></a>`
+
+          }
+          divRecomendaciones.innerHTML = contenido;
+          recomendaciones.innerText = `Dejar de ver recomendaciones`
         }
-        divRecomendaciones.innerHTML = contenido;
-        recomendaciones.innerText = `Dejar de ver recomendaciones`
-}
-      
-      else {
-        divRecomendaciones.innerHTML = `<h2> No hay recomendaciones </h2>`;
-      }
-    })
-    .catch(function (error) {
-      console.log('El error es: ' + error);
-    });  
-// Dejar de ver recomendaciones
-recomendaciones.addEventListener("click", function(){
-  divRecomendaciones.style.display = "none";
-  recomendaciones.innerText = `Ver recomendaciones`
-    })
 
+        else {
+          divRecomendaciones.innerHTML = `<h2> No hay recomendaciones </h2>`;
+        }
+      })
+      .catch(function (error) {
+        console.log('El error es: ' + error);
+      });
+    recomendados = true
+  }
 })
-  

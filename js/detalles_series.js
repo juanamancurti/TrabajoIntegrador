@@ -49,42 +49,42 @@ fetch(detalles_series)
 
 
 // Ver recomendaciones
-recomendaciones.addEventListener("click", function(){
-  fetch(recomendacionesApi)
-    .then(function(response) {
-      return response.json();
-    })
+let recomendados = false
+recomendaciones.addEventListener("click", function () {
+  if (recomendados) {
+    divRecomendaciones.innerHTML = ''
+    recomendaciones.innerText = `Ver recomendaciones`
+    recomendados = false
+  } else {
 
-    .then(function(data) {
-      console.log(data)
-      recomendacionesSerie = data.results; // Todas las recomendaciones
-      if (recomendacionesSerie.length !== 0){
-      let contenido = "";
-      for (let i = 0; i < 5; i++) {
+    fetch(recomendacionesApi)
+      .then(function (response) {
+        return response.json();
+      })
 
-      contenido+= `<a href="detalles_series.html?id=${recomendacionesSerie[i].id}">
-                    <img src="https://image.tmdb.org/t/p/w500${recomendacionesSerie[i].poster_path}">
-                    <p>${recomendacionesSerie[i].name}</p></a>`
-        
-      }
-      divRecomendaciones.innerHTML = contenido;
-      recomendaciones.innerText = `Dejar de ver recomendaciones`
+      .then(function (data) {
+        console.log(data)
+        let recomendacionesSerie = data.results // Todas las recomendaciones
+        if (recomendacionesSerie.length !== 0) {
+          let contenido = "";
+          for (let i = 0; i < 5; i++) {
 
-    }
-      else {
-  
-        divRecomendaciones.innerHTML = `<h2> No hay recomendaciones </h2>`;
-      }
-    })
+            contenido += `<a href="detalles_peliculas.html?id=${recomendacionesSerie[i].id}">
+          <img src="https://image.tmdb.org/t/p/w500${recomendacionesSerie[i].poster_path}">
+          <p>${recomendacionesSerie[i].name}</p></a>`
 
-    .catch(function(error) {
-      console.log('El error es: ' + error);
-    });
+          }
+          divRecomendaciones.innerHTML = contenido;
+          recomendaciones.innerText = `Dejar de ver recomendaciones`
+        }
 
-// Dejar de ver recomendaciones
-recomendaciones.addEventListener("click", function(){
-  divRecomendaciones.style.display = "none";
-
-})
-
+        else {
+          divRecomendaciones.innerHTML = `<h2> No hay recomendaciones </h2>`;
+        }
+      })
+      .catch(function (error) {
+        console.log('El error es: ' + error);
+      });
+      recomendados = true   
+  }
 })

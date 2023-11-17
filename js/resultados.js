@@ -27,8 +27,9 @@ let endPointTv= `https://api.themoviedb.org/3/search/tv?api_key=${ApiKey}&query=
                  <a href="./detalles_peliculas.html"> <img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}"></a>
                  <a href="./detalles_peliculas.html?id=${pelicula[i].id}">
                  </a>
-                 <p>${pelicula[i].title}</p>
-                 <p>${pelicula[i].release_date}</p>
+                 <a href="detalles_peliculas.html?id=${pelicula[i].id}"><p>${pelicula[i].title}</p></a>
+                 <a href="detalles_peliculas.html?id=${pelicula[i].id}">
+                 <p>${pelicula[i].release_date}</p></a>
                  </article>`
            }
         resultados.innerHTML = contenido;
