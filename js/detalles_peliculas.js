@@ -31,7 +31,7 @@ fetch(detalles_peli)
     let gnPeli = "";
     for (let i = 0; i < detallePel.length; i++) {
       console.log(detallePel[i].name)
-      gnPeli += `<a href="detalles_de_genero.html?id=${detallePel[i].id}">${detallePel[i].name} </a>`;
+      gnPeli += `<a href="detalles_de_genero.html?id=${detallePel[i].id}&nombre=${detallePel[i].name}">${detallePel[i].name} </a>`;
     }
 
     // Agregar botón de favoritos
