@@ -22,7 +22,7 @@ fetch(generoPeli)
         
         contenido+= `
                     <ul>
-                        <li><a href="./detalles_de_genero.html">${data.genres[i]}</a>
+                        <li><a href="./detalles_de_genero.html?id=${data.genres[i].id}">${data.genres[i].name}</a>
                         </li>
                         </ul>
             `
@@ -50,7 +50,7 @@ fetch(generoSer)
     for (let i=0; i< 5; i++){
         
         contenido+= `<ul>
-                        <li><a href="./detalles_de_genero.html">${data.genres[i]}</a>
+                        <li><a href="./detalles_de_genero.html?id=${data.genres[i].id}">${data.genres[i].name}</a>
                         </li>
                         </ul>`
 

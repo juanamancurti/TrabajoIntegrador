@@ -25,8 +25,12 @@ fetch(TopRated)
                         <a href="detalles_peliculas.html?id=${pelicula[i].id}">
                             <img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}">
                     </a>
+                    <a href="detalles_peliculas.html?id=${pelicula[i].id}">
                         <p>${pelicula[i].title}</p>
+                        </a>
+                    <a href="detalles_peliculas.html?id=${pelicula[i].id}">
                         <p>${pelicula[i].release_date}</p>
+                        </a>
                         </article>`
     }
 
@@ -56,8 +60,12 @@ fetch(SeriesPopulares)
                           <a href="detalles_series.html?id=${series[i].id}">
                               <img src="https://image.tmdb.org/t/p/w500${series[i].poster_path}">
                          </a>
+                         <a href="detalles_series.html?id=${series[i].id}">
                         <h3>${series[i].name}</h3>
+                        </a>
+                        <a href="detalles_series.html?id=${series[i].id}">
                         <p>${series[i].first_air_date}</p>
+                        </a>
                         </article>`
     }
 

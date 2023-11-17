@@ -16,7 +16,7 @@ let endPointTv= `https://api.themoviedb.org/3/search/tv?api_key=${ApiKey}&query=
         })
         .then (function(data){
             if(data.results.length===0){
-                noHayResultado.innerHTML = '<h2>No hay resultado de búsqueda</h2>';
+                noHayResultado.innerHTML = '<h2>No hay resultado para su búsqueda</h2>';
            } else {
                 let pelicula= data.results; //Todas las peliculas
                 let contenido= "";
@@ -44,7 +44,7 @@ let endPointTv= `https://api.themoviedb.org/3/search/tv?api_key=${ApiKey}&query=
         })
         .then (function(data){
             if(data.results.length===0){
-                noHayResultado.innerHTML = '<h2> No hay resultado de búsqueda </h2>';
+                noHayResultado.innerHTML = '<h2> No hay resultado para su búsqueda </h2>';
            } else {
                 let tv= data.results; //Todas las series
                 let contenido= "";
