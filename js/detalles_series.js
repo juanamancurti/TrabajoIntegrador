@@ -31,8 +31,13 @@ fetch(detalles_series)
     let detalleSer = data.genres;
 
     let gnSerie = "";
-    for (let i = 0; i < detalleSer.length; i++) {
-      gnSerie += `<a href="./detalles_de_genero.html?id=${detalleSer[i].id}&nombre=${detalleSer[i].name}">${detalleSer[i].name} </a>`;
+    if (detalleSer.length > 0){
+      for (let i = 0; i < detalleSer.length; i++) {
+      
+       gnSerie += `<a href="./detalles_de_genero.html?id=${detalleSer[i].id}&nombre=${detalleSer[i].name}">${detalleSer[i].name} </a>`;
+      }
+    }else{ 
+      gnSerie+=`<p>"No hay géneros disponibles"</p>`
     }
     
     imagenSerie.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${data.poster_path}">`

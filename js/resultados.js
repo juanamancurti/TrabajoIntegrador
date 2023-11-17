@@ -24,7 +24,7 @@ let endPointTv= `https://api.themoviedb.org/3/search/tv?api_key=${ApiKey}&query=
                 for (let i=0; i< 5; i++){
             
                  contenido+= `<article class="articulo">
-                 <a href="./detalles_peliculas.html"> <img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}"></a>
+                 <a href="./detalles_peliculas.html?id=${pelicula[i].id}"> <img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}"></a>
                  <a href="./detalles_peliculas.html?id=${pelicula[i].id}">
                  </a>
                  <a href="detalles_peliculas.html?id=${pelicula[i].id}"><p>${pelicula[i].title}</p></a>
@@ -54,11 +54,11 @@ let endPointTv= `https://api.themoviedb.org/3/search/tv?api_key=${ApiKey}&query=
                 for (let i=0; i< 5; i++){
             
                  contenido+= `<article class="articulo">
-                 <a href="./detalles_series.html"> <img src="https://image.tmdb.org/t/p/w500${tv[i].poster_path}"></a>
+                 <a href="./detalles_series.html?id=${tv[i].id}"> <img src="https://image.tmdb.org/t/p/w500${tv[i].poster_path}"></a>
                  <a href="./detalles_series.html?id=${tv[i].id}">
-                 </a>
-                 <p>${tv[i].original_name}</p>
-                 <p>${tv[i].first_air_date}</p>
+                 <p>${tv[i].original_name}</p></a>
+                 <a href="./detalles_series.html?id=${tv[i].id}">
+                 <p>${tv[i].first_air_date}</p></a>
                  </article>`
            }
         resultados.innerHTML = contenido;

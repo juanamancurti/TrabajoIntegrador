@@ -29,9 +29,13 @@ fetch(detalles_peli)
     console.log(data)
     let detallePel = data.genres;
     let gnPeli = "";
-    for (let i = 0; i < detallePel.length; i++) {
-      console.log(detallePel[i].name)
-      gnPeli += `<a href="detalles_de_genero.html?id=${detallePel[i].id}&nombre=${detallePel[i].name}">${detallePel[i].name} </a>`;
+    if (detallePel.length > 0){
+      for (let i = 0; i < detallePel.length; i++) {
+       console.log(detallePel[i].name)
+        gnPeli += `<a href="detalles_de_genero.html?id=${detallePel[i].id}&nombre=${detallePel[i].name}">${detallePel[i].name} </a>`;
+    }
+  }else{ 
+      gnSerie+=`<p>"No hay géneros disponibles"</p>`
     }
 
 
@@ -133,3 +137,4 @@ recomendaciones.addEventListener("click", function () {
     recomendados = true
   }
 })
+
