@@ -38,6 +38,7 @@ fetch(discover)
                         <a href="detalles_peliculas.html?id=${pelicula[i].id}">
                             <img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}"> 
                         </a>
+                        
                             <p>${pelicula[i].title}</p>
                             <p>${pelicula[i].release_date}</p>
                         </article>`
@@ -61,15 +62,19 @@ fetch(discoverTv)
         for (let i = 0; i < 12; i++) {
 
             contenido += `<article class="articulo">
-                        <a href="detalles_series.html?id=${tv[i].id}"> </a>
-                        <img src="https://image.tmdb.org/t/p/w500${tv[i].poster_path}">
+                        <a href="detalles_series.html?id=${tv[i].id}"> <img src="https://image.tmdb.org/t/p/w500${tv[i].poster_path}"> </a>
+                        
                         <a href="detalles_series.html?id=${tv[i].id}">
-                        <p>${tv[i].original_name}</p>
+                        <p>${tv[i].original_name}</p> </a>
+                        <a href="detalles_series.html?id=${tv[i].id}">
                         <p>${tv[i].first_air_date}</p>
                         </a>
                         </article>`
         }
 
         detalles_de_genero.innerHTML = contenido;
+        nombre.innerHTML= nombreGenero
+
 
     })
+    

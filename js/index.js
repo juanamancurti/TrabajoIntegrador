@@ -93,8 +93,8 @@ fetch(PeliculasPopulares)
         contenido+= `<article class="articulo">
                         <a href="detalles_peliculas.html?id=${peliculaPop[i].id}">
                             <img src="https://image.tmdb.org/t/p/w500${peliculaPop[i].poster_path}"> </a>
-                        <p>${peliculaPop[i].title}</p>
-                        <p>${peliculaPop[i].release_date}</p>
+                            <a href="detalles_peliculas.html?id=${peliculaPop[i].id}"><p>${peliculaPop[i].title}</p></a>
+                            <a href="detalles_peliculas.html?id=${peliculaPop[i].id}"><p>${peliculaPop[i].release_date}</p></a>
                         </article>`
     }
    
