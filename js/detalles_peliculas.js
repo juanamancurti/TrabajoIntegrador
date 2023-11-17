@@ -3,7 +3,8 @@ let queryString=location.search;
 let queryStringObj= new URLSearchParams(queryString);
 let id_peli = queryStringObj.get('id');
 console.log(id_peli);
-// DOM
+
+// Asignamos variables utilizando DOM
 let imagenPeli = document.querySelector(".div_imagen")
 let tituloPeli = document.querySelector(".titlePeli")
 let calificacion = document.querySelector(".calificacionPeli")

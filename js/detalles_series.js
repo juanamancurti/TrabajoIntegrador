@@ -3,7 +3,8 @@ let queryString=location.search;
 let queryStringObj= new URLSearchParams(queryString);
 let id_serie = queryStringObj.get('id');
 console.log(id_serie);
-// DOM
+
+// Asignamos variables utilizando DOM
 let imagenSerie = document.querySelector(".div_imagen")
 let tituloSerie = document.querySelector(".titleSerie")
 let calificacion = document.querySelector(".calificacionSerie")
@@ -11,10 +12,14 @@ let duracion = document.querySelector(".duracion")
 let fechaEstreno =document.querySelector(".fechaEstrenoSerie")
 let sinopsis = document.querySelector(".sinopsisSerie")
 let genero = document.querySelector(".generoSerie")
+let favoritos = document.querySelector(".fav")
+let recomendaciones = document.querySelector(".reco")
+let divRecomendaciones = document.querySelector(".recomendaciones")
 
 // Asignamos variables 
 let ApiKey=  "1173214cf5e2ac8f2c0ac1c242d0ec8a";
 let detalles_series = `https://api.themoviedb.org/3/tv/${id_serie}?api_key=${ApiKey}`
+let recomendacionesApi = `https://api.themoviedb.org/3/tv/${id_serie}/recommendations?api_key=${ApiKey}`
 
 fetch(detalles_series)
   .then(function(response) {
@@ -42,3 +47,30 @@ fetch(detalles_series)
     console.log('El error es: ' + error);
   });
 
+
+// Ver recomendaciones
+recomendaciones.addEventListener("click", function(){
+  fetch(recomendacionesApi)
+    .then(function(response) {
+      return response.json();
+    })
+
+    .then(function(data) {
+      console.log(data)
+      recomendacionesSerie = data.results; // Todas las recomendaciones
+      let contenido = "";
+      for (let i = 0; i < 5; i++) {
+
+      contenido+= `<a href="detalles_series.html?id=${recomendacionesSerie[i].id}">
+                    <img src="https://image.tmdb.org/t/p/w500${recomendacionesSerie[i].poster_path}">
+                    <p>${recomendacionesSerie[i].name}</p></a>`
+        
+      }
+      divRecomendaciones.innerHTML = contenido;
+    })
+
+    .catch(function(error) {
+      console.log('El error es: ' + error);
+    });
+
+})

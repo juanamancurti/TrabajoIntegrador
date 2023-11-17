@@ -4,7 +4,7 @@ let TopRated=  `https://api.themoviedb.org/3/movie/top_rated?api_key=${ApiKey}`;
 let PeliculasPopulares= `https://api.themoviedb.org/3/movie/popular?api_key=${ApiKey}`;
 let SeriesPopulares= `https://api.themoviedb.org/3/tv/popular?api_key=${ApiKey}`;
 
-//Dom 
+//Asignamos variables utilizando DOM
 let peliculasMasVistas=document.querySelector(".peliculas");
 let seriesMasVistas=document.querySelector(".Series");
 let nostalgic=document.querySelector(".Nostalgic");

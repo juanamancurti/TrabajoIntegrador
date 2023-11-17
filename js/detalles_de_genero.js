@@ -15,7 +15,8 @@ let discoverTv = `https://api.themoviedb.org/3/discover/tv?with_genres=${idGener
 
 console.log(discover)
 console.log(discoverTv)
-//Dom 
+
+//Asignamos variables utilizando DOM
 let detalles_de_genero = document.querySelector(".detalles");
 
 

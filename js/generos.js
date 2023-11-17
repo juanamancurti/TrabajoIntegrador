@@ -2,7 +2,8 @@
 let ApiKey=  "1173214cf5e2ac8f2c0ac1c242d0ec8a";
 let generoPeli = `https://api.themoviedb.org/3/genre/movie/list?api_key=${ApiKey}`;
 let generoSer = `https://api.themoviedb.org/3/genre/tv/list?api_key=${ApiKey}`;
-//Dom 
+
+//Asignamos variables utilizando DOM
 let peliculasGeneros=document.querySelector(".generoPelicula");
 let seriesGeneros=document.querySelector(".generoSeries");
 
