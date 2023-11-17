@@ -13,6 +13,7 @@ let sinopsis = document.querySelector(".sinopsisPeli")
 let genero = document.querySelector(".generoPeli")
 let favoritos = document.querySelector(".fav")
 let recomendaciones = document.querySelector(".reco")
+let divRecomendaciones = document.querySelector(".recomendaciones")
 
 // Asignamos variables 
 let ApiKey=  "1173214cf5e2ac8f2c0ac1c242d0ec8a";
@@ -76,14 +77,12 @@ recomendaciones.addEventListener("click", function(){
       let contenido = "";
       for (let i = 0; i < 5; i++) {
 
-      contenido+= `<article class="articulo_reco">
-                          <a href="detalles_peliculas.html?id=${recomendacionesPeli[i].id}">
-                          <img src="https://image.tmdb.org/t/p/w500${recomendacionesPeli[i].poster_path}">
-                          <p>${recomendacionesPeli[i].original_title}</p></a>
-                          </article>`
+      contenido+= `<a href="detalles_peliculas.html?id=${recomendacionesPeli[i].id}">
+                    <img src="https://image.tmdb.org/t/p/w500${recomendacionesPeli[i].poster_path}">
+                    <p>${recomendacionesPeli[i].original_title}</p></a>`
         
       }
-      recomendaciones.innerHTML = contenido;
+      divRecomendaciones.innerHTML = contenido;
     })
 
     .catch(function(error) {

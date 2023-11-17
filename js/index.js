@@ -70,7 +70,7 @@ fetch(SeriesPopulares)
 })
 
 
-//Fetch Nostalgic
+//Fetch Top Rated
 fetch(PeliculasPopulares)
 .then(function(response){
     return response.json();

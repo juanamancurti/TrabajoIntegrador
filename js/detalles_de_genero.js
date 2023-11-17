@@ -32,12 +32,11 @@ fetch(discover)
         for (let i = 0; i < 12; i++) {
 
             contenido += `<article class="articulo">
-                        <a href="detalles_peliculas.html?id=${pelicula[i].id}"> </a>
-                        <img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}">
                         <a href="detalles_peliculas.html?id=${pelicula[i].id}">
-                        <p>${pelicula[i].title}</p>
-                        <p>${pelicula[i].release_date}</p>
+                            <img src="https://image.tmdb.org/t/p/w500${pelicula[i].poster_path}"> 
                         </a>
+                            <p>${pelicula[i].title}</p>
+                            <p>${pelicula[i].release_date}</p>
                         </article>`
         }
 
