@@ -68,6 +68,8 @@ recomendaciones.addEventListener("click", function(){
         
       }
       divRecomendaciones.innerHTML = contenido;
+      recomendaciones.innerText = `Dejar de ver recomendaciones`
+
     }
       else {
   
@@ -82,6 +84,7 @@ recomendaciones.addEventListener("click", function(){
 // Dejar de ver recomendaciones
 recomendaciones.addEventListener("click", function(){
   divRecomendaciones.style.display = "none";
+
 })
 
 })
