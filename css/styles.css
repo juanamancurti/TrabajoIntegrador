@@ -272,6 +272,13 @@ h2 {
     display:flex;
 }
 
+.recomendaciones h2 {
+    color: rgb(164, 22, 115);
+    font-size: 30px;
+    text-decoration: none;
+
+}
+
 .recomendaciones a{
     display: flex;
     flex-direction: column;
