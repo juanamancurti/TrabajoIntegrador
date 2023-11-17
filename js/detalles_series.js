@@ -7,8 +7,8 @@ console.log(id_serie);
 let imagenSerie = document.querySelector(".div_imagen")
 let tituloSerie = document.querySelector(".titleSerie")
 let calificacion = document.querySelector(".calificacionSerie")
+let duracion = document.querySelector(".duracion")
 let fechaEstreno =document.querySelector(".fechaEstrenoSerie")
-let final = document.querySelector(".final")
 let sinopsis = document.querySelector(".sinopsisSerie")
 let genero = document.querySelector(".generoSerie")
 
@@ -22,8 +22,9 @@ fetch(detalles_series)
   
   })
   .then(function(data) {
-    let detalleSer = data.genres;
     console.log(data);
+    let detalleSer = data.genres;
+
     let gnSerie = "";
     for (let i = 0; i < detalleSer.length; i++) {
       gnSerie += `<a href="./detalles_de_genero.html?id=${detalleSer[i].id}">${detalleSer[i].name} </a>`;
@@ -32,7 +33,7 @@ fetch(detalles_series)
     imagenSerie.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${data.poster_path}">`
     tituloSerie.innerHTML = data.original_name;
     calificacion.innerHTML = `<p> Calificación: ${data.vote_average}</p> `;
-    final.innerHTML = `<p> Finalización: ${data.last_air_date}</p> `; 
+    duracion.innerHTML = `<p> Duración: ${data.number_of_seasons} temporadas y ${data.number_of_episodes} episodios </p> `; 
     genero.innerHTML = `<p> Género: ${gnSerie}</p> `;
     fechaEstreno.innerHTML = `<p> Estreno: ${data.first_air_date}</p>`;
     sinopsis.innerHTML = `<p> Sinopsis: ${data.overview}</p>`;
