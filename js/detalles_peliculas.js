@@ -35,11 +35,8 @@ fetch(detalles_peli)
         gnPeli += `<a href="detalles_de_genero.html?id=${detallePel[i].id}&nombre=${detallePel[i].name}">${detallePel[i].name} </a>`;
     }
   }else{ 
-      gnSerie+=`<p>"No hay géneros disponibles"</p>`
+      gnPeli+=`<p>"No hay géneros disponibles"</p>`
     }
-
-
-
 
     imagenPeli.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${data.poster_path}">`
     tituloPeli.innerHTML = data.title;
@@ -50,41 +47,13 @@ fetch(detalles_peli)
     sinopsis.innerHTML = `<p> Sinopsis: ${data.overview}}</p> `;
 
     //Agregar botón de favoritos
-
-    let favorito = false;
-    function estaEnFavoritosONo() {
-      // BUSCO EN LOCAL 
-
-      let favoritos_array = localStorage.getItem('favoritos')
-
-      if (favoritos_array) {
-        console.log('Hay local de favoritos')
-        let favoritos_parseado = JSON.parse(favoritos_array)
-        let estaEnFavorito = favoritos_parseado.includes(id_peli)
-        if (estaEnFavorito) {
-          favoritos.innerHTML += `Quitar de favoritos`;
-
-          favorito = true
-
-        } else {
-          favoritos.innerHTML = `Agregar a favoritos`;
-          favorito = false
-        }
-      }
-
-    }
-    estaEnFavoritosONo()
-
     favoritos.addEventListener("click", function () {
-      if (this.style.backgroundColor === "red") {
-        this.style.backgroundColor = "green";
+      if (this.style.backgroundColor === "rgb(146, 9, 171)") {
+        this.style.backgroundColor = "rgba(241, 187, 196, 0.887)";
         this.innerHTML = "Agregar a Favoritos";
-        let favs = [];
-        let favsString = JSON.stringify(favs);
-
-        localStorage.setItem('favsString')
+  
       } else {
-        this.style.backgroundColor = "red";
+        this.style.backgroundColor = "rgb(146, 9, 171)";
         this.innerHTML = "Quitar de favoritos";
       }
     });
@@ -104,7 +73,8 @@ recomendaciones.addEventListener("click", function () {
     divRecomendaciones.innerHTML = ''
     recomendaciones.innerText = `Ver recomendaciones`
     recomendados = false
-  } else {
+  } 
+  else {
 
     fetch(recomendacionesApi)
       .then(function (response) {

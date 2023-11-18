@@ -12,7 +12,7 @@ let duracion = document.querySelector(".duracion")
 let fechaEstreno =document.querySelector(".fechaEstrenoSerie")
 let sinopsis = document.querySelector(".sinopsisSerie")
 let genero = document.querySelector(".generoSerie")
-let favoritos = document.querySelector(".fav")
+let favoritos = document.querySelector(".botonFav")
 let recomendaciones = document.querySelector(".reco")
 let divRecomendaciones = document.querySelector(".recomendaciones")
 
@@ -47,6 +47,19 @@ fetch(detalles_series)
     genero.innerHTML = `<p> Género: ${gnSerie}</p> `;
     fechaEstreno.innerHTML = `<p> Estreno: ${data.first_air_date}</p>`;
     sinopsis.innerHTML = `<p> Sinopsis: ${data.overview}</p>`;
+    
+    
+    //Agregar botón de favoritos
+    favoritos.addEventListener("click", function () {
+      if (this.style.backgroundColor === "rgb(146, 9, 171)") {
+        this.style.backgroundColor = "rgba(241, 187, 196, 0.887)";
+        this.innerHTML = "Agregar a Favoritos";
+        
+      } else {
+        this.style.backgroundColor = "rgb(146, 9, 171)";
+        this.innerHTML = "Quitar de favoritos";
+      }
+    });
   })
   .catch(function(error) {
     console.log('El error es: ' + error);
@@ -74,7 +87,7 @@ recomendaciones.addEventListener("click", function () {
           let contenido = "";
           for (let i = 0; i < 5; i++) {
 
-            contenido += `<a href="detalles_peliculas.html?id=${recomendacionesSerie[i].id}">
+            contenido += `<a href="detalles_series.html?id=${recomendacionesSerie[i].id}">
           <img src="https://image.tmdb.org/t/p/w500${recomendacionesSerie[i].poster_path}">
           <p>${recomendacionesSerie[i].name}</p></a>`
 

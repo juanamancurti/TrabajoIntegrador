@@ -217,7 +217,7 @@ h2 {
 .articulo_detalles{
     display: flex;
     flex-direction: row;
-    max-height: 55vh;
+    max-height: 65vh;
     background-color: rgb(164, 22, 115);
 }
 
@@ -257,6 +257,20 @@ h2 {
     font-family:'Cormorant Garamond', serif;
     
 }
+
+.botonFav{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 10px;
+    margin: 15px;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    font-family:'Cormorant Garamond', serif;
+    background-color: rgb(241, 187, 196);
+}
+
 .recomendaciones{
     display: flex;
     flex-direction: row;
@@ -276,7 +290,6 @@ h2 {
     color: rgb(164, 22, 115);
     font-size: 30px;
     text-decoration: none;
-
 }
 
 .recomendaciones a{
